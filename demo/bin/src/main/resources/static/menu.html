@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>menu manage page</title>
+</head>
+<body>
+<table border="0">
+ <tr>
+	<th>
+	 	<form action="http://localhost:8080/select" target="tblId" method="get">
+	 		<button>최근 방문한 사이트 이력  </button>
+	 	</form>
+	 </th>
+	 <th>
+	 	<form action="http://localhost:8080/mfv" target="tblId" method="get">
+	 		<button>자주 방문하는 사이트</button>
+	 	</form>
+	 </th>
+	 <th>
+	 	<form action="http://localhost:8080/lrv" target="tblId" method="get">
+	 		<button>가장 방문한지 오래된 사이트</button>
+	 	</form>
+	 </th>
+	 <th>
+	 	<form action="http://localhost:8080/init" target="tblId" method="get">
+		 <button>초기화</button>
+		</form>
+	 </th>
+ </tr>
+</table>
+</body>
+</html>

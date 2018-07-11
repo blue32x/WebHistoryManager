@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css"/>
+  
+  <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+   $(document).ready(function() {
+    $('#userTable').DataTable(
+    		{
+    			    searching: false,
+    			    columnDefs : [ {
+ 			           type : 'lastChngTmstmp',
+ 			            targets : 1
+ 			        }, {
+ 			            bSortable : false,
+ 			            orderable : false,
+ 			            targets : 0
+ 			       } ]
+		    }
+    );
+   } );
+  </script>
+
+  <title></title>
+</head>
+<body>
+ <table id="userTable" class="table table-bordred table-striped">
+     <thead>
+    <tr>
+          <th>호스트</th>
+          <th>방문일시</th>
+     </tr>
+     </thead>
+     <tbody>
+     <tr th:each="url : ${userList}">
+         <td th:text="${url.hostNm}">hostNm</td>    
+         <td th:text="${url.lastChngTmstmp}">lastChngTmstmp</td>
+     </tr>
+     </tbody>
+     </table>  
+</body>
+</html>
