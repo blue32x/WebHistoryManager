@@ -9,7 +9,7 @@
 
 | 영역 | 사용기술 | 버전 |
 |------|---------|------|
-| 개발툴 | eclipse | Oxygen |
+| 개발툴 | eclipse -spring STS - | Oxygen |
 | 서버 | Spring Boot | v2.0.3 |
 | 서버 | embedded mongodb| v1.50.5 |
 | 서버 | embedded tomcat | v2.0.3 |
