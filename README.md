@@ -50,3 +50,4 @@
  
  
 - command : java -jre [생성된WAR경로]/demo-0.0.1-SNAPSHOT.war
+- ex) java -jre /demo/target/demo-0.0.1-SNAPSHOT.jar
