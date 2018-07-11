@@ -31,5 +31,7 @@
 ================
 
 1. 빌드
+ ※ maven ,java v1.8 설치 필수
+ 
 2. 실행 
 java -jre /target/[].war
