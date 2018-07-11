@@ -17,7 +17,8 @@
 | 서버 | embedded tomcat | v2.0.3 |
 | 화면 | thymeleaf |  |
 | 화면 | datatables |  |
-|언어  | java  |v1.8
+|언어  | java  |v1.8|
+|단위테스트 | junit | |
 
 # 문제 해결전략
 ---------------
@@ -34,11 +35,13 @@
 
  빌드
  -----------------
- - ※ maven ,java v1.8 설치 필수
+ - ※ maven ,java v1.8 설치 필수, 빌드 오류 발생 시 pom.xml에서 spring-boot의 버전을 변경(현재 v2.0.0)
  - eclipse : project -> run as -> maven build(goal:package)
  
  
  - command : 
+ - 해당 프로젝트의 경로에서...
+ - mvn package
 
 실행 
 ---------------
