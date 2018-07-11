@@ -51,3 +51,9 @@
  
 - command : java -jre [생성된WAR경로]/demo-0.0.1-SNAPSHOT.war
 - ex) java -jre /demo/target/demo-0.0.1-SNAPSHOT.jar
+
+
+# 결과확인
+---------------
+
+- http://localhost:8080
