@@ -26,7 +26,7 @@
 3. 페이징처리 : jquery 기반 플러그인 datatables를 사용하여  페이징 처리 구현.
 4. 데이터베이스 : in-memory-db embedded mongodb를 설치하여 따로 db서버를 만들지 않음.
 5. Host 분리 : 정규표현식을 사용하여 Host 분리.
-
+6. 단위테스트 : junit 통한 단위테스트 
 
 
 # 빌드 및 실행방법
