@@ -34,15 +34,18 @@ public class ViewController {
 	public ModelAndView insertUrl( @RequestParam(value = "url")String url, ModelAndView mv)
 	{
 		logger.info("#SHCHOI insert");
+		TblDtoClass tbl = _setDto(url);
 		mv.setViewName("url");
-		
 		if(url.length() == 0 || url.isEmpty())
 		{
+			mv.addObject("result", tbl.getHostNm());
 			return mv;
 		}
+		mv.addObject("result", tbl.getHostNm());
 		/*
 		 * 이력 적재 서비스 오퍼레이션 호출 
 		 */
+		
 		tblActionSrvc.insert(_setDto(url));
 		return mv;
 	}
@@ -115,6 +118,10 @@ public class ViewController {
 		 */
 		Pattern pattern =Pattern.compile("^(http|https|ftp)://[a-z0-9A-Z]*(.)[a-z0-9A-Z]*(.)[a-z0-9A-Z.]*");
 		Matcher matcher = pattern.matcher(url);
+		if(!matcher.matches())
+		{
+			tblDtoClass.setHostNm("unKnown");
+		}
 		while(matcher.find())
 		{
 			String  hostNm= matcher.group();
