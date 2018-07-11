@@ -115,18 +115,19 @@ public class ViewController {
 		 * 2018.07.09
 		 * Pattern 활용 Regex 연습
 		 * ^(http|https|ftp)://[a-z0-9A-Z]*(.)[a-z0-9A-Z]*(.)[a-z0-9A-Z.]*
+		 * ^(https?):\/\/([^:\/\s]+)(:([^\/]*))?((\/[^\s/\/]+)*)?\/([^#\s\?]*)(\?([^#\s]*))?(#(\w*))?$
+		 * ^(https?):\\/\\/([^:\\/\\s]+)(:([^\\/]*))?((\\/[^\\s/\\/]+)*)?\\/([^#\\s\\?]*)(\\?([^#\\s]*))?(#(\\w*))?$
 		 */
-		Pattern pattern =Pattern.compile("^(http|https|ftp)://[a-z0-9A-Z]*(.)[a-z0-9A-Z]*(.)[a-z0-9A-Z.]*");
+		Pattern pattern =Pattern.compile("^(https?):\\/\\/([^:\\/\\s]+)(:([^\\/]*))?((\\/[^\\s/\\/]+)*)?\\/([^#\\s\\?]*)(\\?([^#\\s]*))?(#(\\w*))?$");
 		Matcher matcher = pattern.matcher(url);
-		if(!matcher.matches())
+		if(matcher.matches())
+		{
+			
+			tblDtoClass.setHostNm(matcher.group(2));
+		}
+		else
 		{
 			tblDtoClass.setHostNm("unKnown");
-		}
-		while(matcher.find())
-		{
-			String  hostNm= matcher.group();
-			String[] hostSplit = hostNm.split("//");
-			tblDtoClass.setHostNm(hostSplit[1]);
 		}
 		tblDtoClass.setUrlCntnt(url);
 		tblDtoClass.setLastChngTmstmp(sdf2.format(date));
