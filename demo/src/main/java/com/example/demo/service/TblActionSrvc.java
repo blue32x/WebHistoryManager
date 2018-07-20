@@ -2,6 +2,9 @@ package com.example.demo.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import com.example.demo.domain.TblAggDtoClass;
 import com.example.demo.domain.TblDtoClass;
 
@@ -17,6 +20,15 @@ public interface TblActionSrvc {
 	 */
 	public List<TblDtoClass> selectAll(TblDtoClass tblDtoClass);
 	
+	/*
+	 * 2018.07.20 pageNum을 통한 페이징 처리
+	 * 
+	 */
+	public List<TblDtoClass> selectByPaging(int pageNum);
+	/* 2018.07.20 pageable을 통한 페이징 처리
+	 * 
+	 */
+	public Page<TblDtoClass>  selectByPagingUsingPageable(Pageable pageable);
 	/*
 	 * 자주 방문하는 사이트(Most Frequently Visited) 
 	 */

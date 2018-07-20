@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -56,6 +56,41 @@ public class ViewController {
 		logger.info("#SHCHOI select");
 		mv.setViewName("table");
 		mv.addObject("userList", tblActionSrvc.selectAll(_setDto("")));
+		/*
+		 * 전체 조회 서비스 오퍼레이션 호출 
+		 */
+		
+		return mv;
+	}
+	/*
+	 * 2018.07.20 
+	 * pageNum,pageCnt를 통한 페이징 처리
+	 */
+	@RequestMapping(value = "/list/{pageNum}", method=RequestMethod.GET)
+	public ModelAndView selectAllPaging01(@PathVariable("pageNum")int pageNum, ModelAndView mv)
+	{
+		logger.info("#SHCHOI list pageNum");
+		mv.setViewName("table"); 
+		mv.addObject("userList", tblActionSrvc.selectByPaging(pageNum));
+		/*
+		 * 전체 조회 서비스 오퍼레이션 호출 
+		 */
+		
+		return mv;
+	}
+	
+	
+	/*
+	 * 2018.07.20
+	 * pageable 객체 사용
+	 * 
+	 */
+	@RequestMapping(value = "/list", method=RequestMethod.GET)
+	public ModelAndView selectAllPaging02(Pageable pageable, ModelAndView mv)
+	{
+		logger.info("#SHCHOI pageable test");
+		mv.setViewName("table");
+		mv.addObject("userList", tblActionSrvc.selectByPagingUsingPageable(pageable));
 		/*
 		 * 전체 조회 서비스 오퍼레이션 호출 
 		 */
