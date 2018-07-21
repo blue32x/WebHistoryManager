@@ -25,8 +25,17 @@
 1. 서버 구현 : Spring Boot를 기반으로 REST API 서버 구현.
 2. FRONT - BACK 데이터 전송 : HTMLFORM 사용하여 데이터 송수신(get/post) 처리.
 3. 페이징처리 : jquery 기반 플러그인 datatables를 사용하여  페이징 처리 구현.
+```
+1. openApi datatables 활용 [현재]
+2. 화면으로부터 pageNum 정보를 수신하여 몽고db 로직을 작성하여 처리
+3. spring boot pageable 객체를 활용하여 처리
+```
 4. 데이터베이스 : in-memory-db embedded mongodb를 설치하여 따로 db서버를 만들지 않음.
 5. Host 분리 : 정규표현식을 사용하여 Host 분리.
+```
+1. 정규표현식 [현재]
+2. URL 객체 활용
+```
 6. 단위테스트 : junit 통한 단위테스트 
 
 
