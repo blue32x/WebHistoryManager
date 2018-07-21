@@ -5,6 +5,7 @@
 
 - 웹사이트 방문 기록을 관리하는 웹어플리케이션 시스템 구현 
 
+![Alt text](https://github.com/blue32x/WebHistoryManager/blob/master/%EA%B1%B0%EB%9E%98%ED%9D%90%EB%A6%84.png)
 
 # 개발환경
 ---------------
